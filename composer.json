@@ -1,0 +1,33 @@
+{
+    "name": "docwal/sdk",
+    "description": "Official PHP SDK for DocWal API - Issue and manage verifiable digital credentials",
+    "keywords": ["docwal", "credentials", "verifiable", "digital", "education", "blockchain"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DocWal",
+            "email": "support@docwal.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DocWal\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DocWal\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

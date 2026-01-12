@@ -1,0 +1,17 @@
+# PHP
+vendor/
+composer.lock
+*.phar
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.phpunit.result.cache
+
+# OS
+.DS_Store
+Thumbs.db
