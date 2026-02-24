@@ -5,6 +5,31 @@ All notable changes to the DocWal PHP SDK will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-02-23
+
+### Added
+- **Credential Issuer Tracking**: API responses now include `issued_by_email` and `issued_by_name` fields
+  - Track which institution admin issued each credential
+  - Available in `$client->credentials->list()` and `$client->credentials->get()` responses
+  - Fields are optional (null for historical credentials issued before tracking)
+- **Batch Upload Tracking**: Batch upload responses now include `uploaded_by` field
+  - Shows which admin uploaded each batch
+
+### Changed
+- Credential arrays now include issuer information for improved accountability and audit trails
+
+### Notes
+- No breaking changes - new fields are optional
+- Historical credentials will have `issued_by_email` and `issued_by_name` as `null`
+- Provides better team visibility and compliance tracking
+- Example usage:
+  ```php
+  $credential = $client->credentials->get('DOC123456');
+  if (!empty($credential['issued_by_name'])) {
+      echo "Issued by: " . $credential['issued_by_name'];
+  }
+  ```
+
 ## [1.0.0] - 2024-01-10
 
 ### Added
